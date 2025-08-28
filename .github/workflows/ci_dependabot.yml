@@ -16,7 +16,7 @@ jobs:
       DEPENDABOT_BRANCH: ci/dependabot-updates
       GIT_USER_NAME: CIF-ontology Team
       GIT_USER_EMAIL: "CIF-ontology@emmo.info"
-      DEFAULT_REPO_BRANCH: main
+      DEFAULT_REPO_BRANCH: master
 
     steps:
     - name: Checkout repository
@@ -24,10 +24,10 @@ jobs:
       with:
         ref: ${{ env.DEFAULT_REPO_BRANCH }}
 
-    - name: Set up Python 3.7
+    - name: Set up Python 3.13
       uses: actions/setup-python@v5
       with:
-        python-version: '3.7'
+        python-version: '3.13'
 
     - name: Install `pre-commit` and dependencies
       run: |

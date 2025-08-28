@@ -1,4 +1,5 @@
 """PyTest fixtures for `dic2owl`."""
+
 # pylint: disable=import-outside-toplevel,consider-using-with,too-many-branches
 # pylint: disable=redefined-outer-name,inconsistent-return-statements
 # pylint: disable=too-many-statements
@@ -105,9 +106,11 @@ def clirunner() -> "CLIRunner":
                     args=[cli.value] + options,
                     capture_output=True,
                     check=True,
-                    cwd=run_dir.name
-                    if isinstance(run_dir, TemporaryDirectory)
-                    else run_dir,
+                    cwd=(
+                        run_dir.name
+                        if isinstance(run_dir, TemporaryDirectory)
+                        else run_dir
+                    ),
                     text=True,
                 )
                 if expected_error:

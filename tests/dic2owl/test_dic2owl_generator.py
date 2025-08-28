@@ -1,4 +1,5 @@
 """Test the `dic2owl.dic2owl.Generator` class."""
+
 # pylint: disable=redefined-outer-name,import-outside-toplevel
 from pathlib import Path
 from typing import TYPE_CHECKING
@@ -32,9 +33,9 @@ def sample_generator(
         return Generator(
             dicfile=cif_dic_path,
             base_iri=base_iri,
-            comments=sample_generator_comments
-            if comments is None
-            else comments,
+            comments=(
+                sample_generator_comments if comments is None else comments
+            ),
         )
 
     return _sample_generator

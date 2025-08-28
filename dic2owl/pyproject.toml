@@ -1,14 +1,87 @@
+[build-system]
+requires = ["flit_core >=3.4,<4"]
+build-backend = "flit_core.buildapi"
+
+[project]
+name = "dic2owl"
+description = "Ontologize CIF dictionaries (`.dic`) using OWL."
+readme = "README.md"
+license = {file = "LICENSE"}
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Environment :: Plugins",
+    "Natural Language :: English",
+    "Operating System :: OS Independent",
+]
+keywords = ["triplestore", "ontology", "RDF"]
+requires-python = ">=3.8"
+dynamic = ["version"]
+
+dependencies = [
+    "EMMOntoPy>=0.6.0,<1",
+    "PyCifRW>=4.4.6,<5",
+]
+
+dev = [
+    "pre-commit==4.0.1",
+    "pylint==3.3.4; python_version>='3.9'",
+    "pytest==8.3.4",
+    "pytest-cov==6.0.0; python_version>='3.9'",
+]
+
+[project.urls]
+Home = "https://github.com/emmo-repo/domain-cif"
+Source = "https://github.com/emmo-repo/domain-cif"
+"Issue Tracker" = "https://github.com/emmo-repo/domain-cif/issues"
+
+[project.scripts]
+dic2owl = "dic2owl.cli:main"
+
+[tool.isort]
+line_length = 79  # PEP8
+
 [tool.black]
 line-length = 79
-target-version = ['py37', 'py38', 'py39']
 
 [tool.mypy]
-python_version = "3.7"
+python_version = "3.13"
 ignore_missing_imports = true
 scripts_are_modules = true
 warn_unused_configs = true
 show_error_codes = true
 allow_redefinition = true
+
+[tool.pylint]
+max-line-length = 80
+max-args = 10
+max-public-methods = 25
+max-locals = 20
+disable = [
+    "fixme",
+    "invalid-name",
+    "too-many-positional-arguments",
+]
+good-names = [
+    # Default
+    "i", "j", "k", "ex", "Run", "_",
+    # Triplestore instance
+    "ts",
+    # Triple components: subject, predicate, object
+    "s", "p", "o",
+    # Namespaces
+    "EX",
+    # dict, value, file, keyword...
+    "d", "v", "f", "kw",
+]
 
 [tool.pytest.ini_options]
 minversion = "7.4"

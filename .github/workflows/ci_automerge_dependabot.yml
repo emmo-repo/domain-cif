@@ -12,8 +12,8 @@ jobs:
 
     env:
       DEPENDABOT_BRANCH: ci/dependabot-updates
-      GIT_USER_NAME: CIF-ontology Team
-      GIT_USER_EMAIL: "CIF-ontology@emmo.info"
+      GIT_USER_NAME: domain-cif maintainers
+      GIT_USER_EMAIL: "domain-cif@emmo.w3id.org"
 
     steps:
     - name: Checkout repository
