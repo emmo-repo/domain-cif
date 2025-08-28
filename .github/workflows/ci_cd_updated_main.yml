@@ -1,14 +1,14 @@
-name: CI/CD - New updates to 'main'
+name: CI/CD - New updates to 'master'
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 env:
   DEPENDABOT_BRANCH: ci/dependabot-updates
-  GIT_USER_NAME: CIF-ontology Team
-  GIT_USER_EMAIL: "CIF-ontology@emmo.info"
-  DEFAULT_REPO_BRANCH: main
+  GIT_USER_NAME: domain-cif maintainers
+  GIT_USER_EMAIL: "domain-cif@emmo.w3id.org"
+  DEFAULT_REPO_BRANCH: master
 
 jobs:
   update-dependabot-branch:
