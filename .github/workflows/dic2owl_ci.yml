@@ -47,7 +47,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install -U setuptools wheel
 
-        pip install -U -r dic2owl/requirements.txt -r dic2owl/requirements_dev.txt
+        cd dic2owl
+        pip install -U .[dev]
         pip install safety
 
     - name: Run PyLint
