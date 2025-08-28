@@ -4,6 +4,7 @@
 The `dic2owl` command line interface (CLI) is an easy way of running the
 ontology-generation tool for CIF `.dic`-files.
 """
+
 import argparse
 from typing import TYPE_CHECKING
 

@@ -1,4 +1,5 @@
 """Tests for `dic2owl.cli`."""
+
 # pylint: disable=import-outside-toplevel
 from pathlib import Path
 from typing import TYPE_CHECKING

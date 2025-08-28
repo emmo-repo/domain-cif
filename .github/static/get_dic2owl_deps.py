@@ -3,6 +3,7 @@
 
 Retrieve dependencies from a `requirements.txt`-style file.
 """
+
 import argparse
 from pathlib import Path
 import re
