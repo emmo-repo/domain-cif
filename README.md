@@ -1,7 +1,7 @@
 # CIF Ontology
 
-[![CI tests](https://github.com/emmo-repo/CIF-ontology/workflows/CI/badge.svg)](https://github.com/emmo-repo/CIF-ontology/actions/)
 [![DOI](https://zenodo.org/badge/272473769.svg)](https://zenodo.org/badge/latestdoi/272473769)
+[![CI tests](https://github.com/emmo-repo/CIF-ontology/workflows/CI/badge.svg)](https://github.com/emmo-repo/CIF-ontology/actions/)
 
 This repository provides an ontologisation of the CIF Dictionary Definition Language ([DDLm](https://www.iucr.org/resources/cif/ddl/ddlm)) and the [CIF core dictionary](https://www.iucr.org/resources/cif/dictionaries/cif_core) by IUCr.
 The development version of these dictionaries can be found in the [COMCIFS/cif_core](https://github.com/COMCIFS/cif_core) GitHub repository.
@@ -20,7 +20,7 @@ It is also possible to clone this repository and generate the CIF ontology.
 First clone this repository with
 
 ```console
-git clone https://github.com/emmo-repo/CIF-ontology.git
+git clone https://github.com/emmo-repo/domain-cif.git
 ```
 
 and then run the `dic2owl` tool following the instructions in the [dic2owl/README.md](dic2owl/README.md) file.
