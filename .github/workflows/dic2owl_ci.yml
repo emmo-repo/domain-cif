@@ -50,6 +50,7 @@ jobs:
         cd dic2owl
         pip install -U .[dev]
         pip install safety
+        pip install pylint
 
     - name: Run PyLint
       run: pylint --rcfile=dic2owl/pyproject.toml dic2owl/**/*.py
