@@ -3,6 +3,7 @@
 
 Python script for generating an ontology corresponding to a CIF dictionary.
 """
+
 from contextlib import redirect_stderr
 from os import devnull as DEVNULL
 from pathlib import Path
@@ -84,8 +85,8 @@ class Generator:
         self.cif_ddl = (
             (ONTOLOGY_DIR / "cif-ddl.ttl").as_uri()
             if local_ddl
-            else "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/main/"
-            "ontology/cif-ddl.ttl"
+            else "https://raw.githubusercontent.com/emmo-repo/CIF-ontology/"
+            "master/ontology/cif-ddl.ttl"
         )
 
         self.dicfile = dicfile

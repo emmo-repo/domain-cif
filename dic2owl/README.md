@@ -4,7 +4,7 @@ This Python package presents a CLI `dic2owl` that can convert a CIF dictionary t
 
 ## Ontologization schema
 
-The early schema development can be found in the [#16](https://github.com/emmo-repo/CIF-ontology/issues/16) issue.
+The early schema development can be found in the [#16](https://github.com/emmo-repo/domain-cif/issues/16) issue.
 
 It has been developed by the EMMO-Crystallography EMMC Task Group, which consists of:
 
@@ -18,11 +18,29 @@ It has been developed by the EMMO-Crystallography EMMC Task Group, which consist
 - Joana Morgado, Fraunhofer IWM
 - Stuart Chalk
 
+
 ## Related work and dependencies
 
 This package relies on the [PyCIFRW](https://bitbucket.org/jamesrhester/pycifrw) package developed by James Hester to parse CIF (`.cif`) and CIF dictionary (`.dic`) files.
 
+
+## Installation
+To install `cif2owl` from your local clone, `cd` to this directory and run
+
+```console
+pip install .
+```
+
+
 ## For developers
+
+### Installation
+Install with
+
+```console
+pip install -e .[dev]
+```
+
 
 ### Pre-commit (Python formatting)
 
@@ -32,8 +50,7 @@ Specifically, [`black`](https://github.com/psf/black) is used as the default Pyt
 To install in your local clone, `cd` to the root of the repository and run
 
 ```console
-/path/to/CIF-ontology$ pre-commit install
-pre-commit installed at .git/hooks/pre-commit
+./cif2owl/pre-commit install
 ```
 
 ## Author

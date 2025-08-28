@@ -9,6 +9,7 @@ installed when `pip install`-ing this package.
 For more information on how to run the CLI, run `dic2owl --help` in your
 terminal.
 """
+
 # pylint: disable=line-too-long
 from .dic2owl import Generator
 

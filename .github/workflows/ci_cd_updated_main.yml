@@ -1,20 +1,22 @@
-name: CI/CD - New updates to 'main'
+name: CI/CD - New updates to 'master'
 
 on:
   push:
-    branches: [main]
+    branches: [master]
 
 env:
   DEPENDABOT_BRANCH: ci/dependabot-updates
-  GIT_USER_NAME: CIF-ontology Team
-  GIT_USER_EMAIL: "CIF-ontology@emmo.info"
-  DEFAULT_REPO_BRANCH: main
+  GIT_USER_NAME: domain-cif maintainers
+  GIT_USER_EMAIL: "domain-cif@emmo.w3id.org"
+  DEFAULT_REPO_BRANCH: master
 
 jobs:
   update-dependabot-branch:
     name: Update permanent dependabot branch
     if: github.repository_owner == 'emmo-repo'
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     steps:
     - name: Checkout repository
@@ -50,9 +52,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Push to '${{ env.DEPENDABOT_BRANCH }}'
-      uses: CasperWA/push-protected@v2
+      uses: ad-m/github-push-action@master
       with:
-        token: ${{ secrets.RELEASE_PAT_CWA }}
-        branch: ${{ env.DEPENDABOT_BRANCH }}
-        sleep: 15
-        force: ${{ env.FORCE_PUSH }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: master # Target branch
+        #force: true # Use with caution, only if necessary (e.g., for force-pushing amended commits)
