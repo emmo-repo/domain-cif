@@ -50,9 +50,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Push to '${{ env.DEPENDABOT_BRANCH }}'
-      uses: CasperWA/push-protected@v2
+      uses: ad-m/github-push-action@master
       with:
-        token: ${{ secrets.RELEASE_PAT }}
-        branch: ${{ env.DEPENDABOT_BRANCH }}
-        pre_sleep: 15
-        force: ${{ env.FORCE_PUSH }}
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: master # Target branch
+        #force: true # Use with caution, only if necessary (e.g., for force-pushing amended commits)
